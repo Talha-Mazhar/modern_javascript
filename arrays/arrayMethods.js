@@ -116,5 +116,6 @@ powerCalc.addMethod('**', (a, b) => a ** b)
 
 let result = powerCalc.calculate('2 ** 3')
 
-let result2 = powerCalc.calculate('2 / 3')
+let result2 = powerCalc.calculate('2 + 3')
 console.log(result)
+console.log(result2)
