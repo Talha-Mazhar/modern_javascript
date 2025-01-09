@@ -39,3 +39,38 @@ user3.set('age', '30')
 for (let [key, value] of user3) {
   alert(`${key}:${value}`) // name:John, then age:30
 }
+
+let guest = 'Jane'
+let admin = 'Pete'
+
+// swap the values
+// [guest, admin] = [admin, guest]
+
+alert(`${guest} ${admin}`)
+
+// ...All other properties
+let [name1, name2, ...rest] = [
+  'Julius',
+  'Caesar',
+  'Consul',
+  'of the Roman Republic',
+]
+
+// rest is an array of items, starting from the 3rd one
+alert(rest[0]) // Consul
+alert(rest[1]) // of the Roman Republic
+alert(rest.length) //2
+
+// Object Destructuring
+let options = {
+  title: 'Menu',
+  width: 100,
+  height: 200,
+}
+
+let { title1, width, height } = options
+
+alert(title1) // Menu
+alert(width) // 100
+alert(height) // 200
+// The order does not matter
