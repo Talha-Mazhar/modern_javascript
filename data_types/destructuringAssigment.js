@@ -129,3 +129,38 @@ let user4 = { name3: 'John', years: 30 }
 
 let { name3, years, isAdmin = false } = user4
 console.log(`${name3} ${years} ${isAdmin}`)
+
+// Task2
+// Create the function topSalary(salaries) that returns the name of the top-paid person.
+
+// If salaries is empty, it should return null.
+// If there are multiple top-paid persons, return any of them.
+
+// function topSalaries(obj) {
+//   let toPaidSal = 0;
+//   let topPaidname = null;
+
+//   fot(const [name, salary] of Object.entries(obj)){
+
+//         if (salary >= toPaidSal) {
+//             toPaidSal = salary
+//             topPaidname = name
+//         }
+
+//   } return maxName;
+
+// }
+
+function topSalary(salaries) {
+  let maxSalary = 0
+  let maxName = null
+
+  for (const [name, salary] of Object.entries(salaries)) {
+    if (maxSalary < salary) {
+      maxSalary = salary
+      maxName = name
+    }
+  }
+
+  return maxName
+}
