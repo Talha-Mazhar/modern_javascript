@@ -74,3 +74,48 @@ alert(title1) // Menu
 alert(width) // 100
 alert(height) // 200
 // The order does not matter
+
+let options2 = {
+  title: 'Menu',
+  width: 100,
+  height: 200,
+}
+
+// { sourceProperty: targetVariable }
+let { width: w, height: h, title: title2 } = options
+
+// Default destructure values
+// let options = {
+//   title: 'Menu',
+// }
+
+// let { width = 100, height = 200, title } = options
+
+// Default can be function calls
+// let options = {
+//     title: "Menu"
+//   };
+
+//   let {width = prompt("width?"), title = prompt("title?")} = options;
+
+// Nested Assignment
+
+// let options = {
+//   size: {
+//     width: 100,
+//     height: 200,
+//   },
+//   items: ['Cake', 'Donut'],
+//   extra: true,
+// }
+
+// // destructuring assignment split in multiple lines for clarity
+// let {
+//   size: {
+//     // put size here
+//     width,
+//     height,
+//   },
+//   items: [item1, item2], // assign items here
+//   title = 'Menu', // not present in the object (default value is used)
+// } = options
