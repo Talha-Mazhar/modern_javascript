@@ -37,3 +37,15 @@ sayHi1();
 +(function () {
   alert('Unary plus starts the expression');
 })();
+
+// Make Private Vars
+
+// IIFE
+
+// immediately invoke funtion
+
+(function () {
+  var message = 'Hello';
+
+  alert(message); // Hello
+})();
