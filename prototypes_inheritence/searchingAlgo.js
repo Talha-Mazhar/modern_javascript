@@ -22,4 +22,9 @@ pockets.__proto__ = bed;
 bed.__proto__ = table;
 table.__proto__ = head;
 
-console.log(pockets.pen);
+console.log(pockets.pen); // 3 pass
+
+// question 3
+// to get glasses faster, how?
+
+// ans: pockets.glasses; will be the faster way, no search will be needed, js engine already remembers the value
