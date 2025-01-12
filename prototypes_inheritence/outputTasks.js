@@ -16,4 +16,4 @@ delete animal.jumps;
 // output: animal = {}
 
 console.log(rabbit.jumps);
-// output undefined no suck proeprty exists
+// output undefined no such proeprty exists
