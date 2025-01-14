@@ -1,4 +1,4 @@
-class Clock {
+export class clock {
   constructor({ template }) {
     this.template = template;
   }
