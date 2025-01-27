@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 20px auto;
+      }
+
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 10px;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+      }
+
+      th {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let weekDays = ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'];
+
+      function getDay(day) {
+        // Adjust Sunday (0) to be the last day (6)
+        return day === 0 ? 6 : day - 1;
+      }
+
+      function createCalendar(elem, year, month) {
+        let table = document.createElement('table');
+        let thead = document.createElement('thead');
+        let tbody = document.createElement('tbody');
+
+        // Create table header for week days
+        let headerRow = document.createElement('tr');
+        weekDays.forEach((day) => {
+          let th = document.createElement('th');
+          th.textContent = day;
+          headerRow.appendChild(th);
+        });
+        thead.appendChild(headerRow);
+
+        // Get the first and last day of the month
+        let firstDay = getDay(new Date(year, month - 1, 1).getDay());
+        let lastDate = new Date(year, month, 0).getDate();
+
+        // Generate the calendar grid
+        let day = 1;
+        for (let i = 0; day <= lastDate; i++) {
+          let row = document.createElement('tr');
+
+          for (let j = 0; j < 7; j++) {
+            let cell = document.createElement('td');
+
+            if ((i === 0 && j < firstDay) || day > lastDate) {
+              // Empty cell before the first day or after the last date
+              cell.textContent = '';
+            } else {
+              cell.textContent = day;
+              day++;
+            }
+
+            row.appendChild(cell);
+          }
+
+          tbody.appendChild(row);
+        }
+
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        document.body.appendChild(table);
+      }
+
+      // Example usage: Create a calendar for January 2025
+      createCalendar('', 2025, 1);
+    </script>
+  </body>
+</html>
