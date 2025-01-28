@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Upper Corners
+      let elem = document.getElementById('elem');
+      let coords = elem.getBoundingClientRect();
+
+      let answer1 = [coords.left, coords.top];
+      let answer2 = [coords.right, coords.bottom];
+
+      //upper left inner corners
+
+      let answer3 = [
+        coords.left + elem.clientLeft,
+        coords.top + elem.clientTop,
+      ];
+      //upper right inner corners
+      let answer4 = [
+        coords.right + parseInt(getComputedStyle(elem).borderRightWidth),
+        coords.bottom + parseInt(getComputedStyle(elem).borderBottomWidth),
+      ];
+    </script>
+  </body>
+</html>
